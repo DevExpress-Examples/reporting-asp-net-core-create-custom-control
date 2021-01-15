@@ -1,0 +1,52 @@
+@*A style that specifies the toolbox item icon.*@
+<link rel="stylesheet" href="~/css/numeric-label.css" />
+
+@*A template used to display the NumericLabel control on the Designer surface.*@
+<template id='numeric-label-content'>
+    <div data-bind="styleunit: { lineHeight: contentSizes().height / _context.zoom() }" style="box-sizing: border-box;
+                                 letter-spacing: normal; width: 100%">
+        <div class="dxrd-control-content" data-bind="text: displaySomeProperty, style: contentCss"></div>
+    </div>
+</template>
+
+@*The code that creates and registers the NumericLabel control.*@
+<script src="~/js/numeric-label.js"></script>
+
+
+@{
+    var designerRender = Html.DevExpress().ReportDesigner("reportDesigner")
+        .Height("1000px")
+        .ClientSideEvents(configure => configure.CustomizeToolbox("onCustomizeToolbox"))
+        .Bind("TestReport");
+    @designerRender.RenderHtml();
+
+    //Get the NumericLabel control's type name.
+    string shortTypeName = typeof(NumericLabel).FullName;
+    string fullTypeName = typeof(NumericLabel).AssemblyQualifiedName;
+}
+
+<script type="text/javascript" id="script">
+    function onCustomizeToolbox(s, e) {
+        customizeToolbox(s, e, '@shortTypeName', '@fullTypeName');
+        // Hide the Text property in the NumericLabel control's Property panel.
+        s.GetPropertyInfo('@shortTypeName', "Text").visible = false;
+        // Hide the XRLabel control in the Toolbox.
+        var info = e.ControlsFactory.getControlInfo("XRLabel");
+        info.isToolboxItem = false;
+    }
+
+
+
+</script>
+
+@section Scripts {
+    <link href="~/css/dx-reporting-skeleton-screen.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/viewer.part.bundle.css" />
+    <link rel="stylesheet" href="~/css/designer.part.bundle.css" />
+
+    <script src="~/js/reporting.thirdparty.bundle.js"></script>
+    <script src="~/js/viewer.part.bundle.js"></script>
+    <script src="~/js/designer.part.bundle.js"></script>
+
+    @designerRender.RenderScripts()
+}
