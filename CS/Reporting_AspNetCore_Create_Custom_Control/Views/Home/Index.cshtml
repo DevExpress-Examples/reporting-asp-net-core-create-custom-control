@@ -1,6 +1,7 @@
 @*A style that specifies the toolbox item icon.*@
 <link rel="stylesheet" href="~/css/numeric-label.css" />
 
+<!--<numeric-label-template>-->
 @*A template used to display the NumericLabel control on the Designer surface.*@
 <template id='numeric-label-content'>
     <div data-bind="styleunit: { lineHeight: contentSizes().height / _context.zoom() }" style="box-sizing: border-box;
@@ -8,7 +9,10 @@
         <div class="dxrd-control-content" data-bind="text: displaySomeProperty, style: contentCss"></div>
     </div>
 </template>
+<!--</numeric-label-template>-->
 
+@*Add TypeScript helper functions library.*@
+<script src="~/js/tslib.js"></script>
 @*The code that creates and registers the NumericLabel control.*@
 <script src="~/js/numeric-label.js"></script>
 

@@ -25,6 +25,13 @@
       "files": [
         "numeric-label.js"
       ]
+    },
+    {
+      "library": "node_modules/tslib/",
+      "destination": "wwwroot/js/",
+      "files": [
+        "tslib.js"
+      ]
     }
   ]
 }
