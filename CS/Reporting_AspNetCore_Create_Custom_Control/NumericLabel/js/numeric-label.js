@@ -1,18 +1,4 @@
-﻿// Implement the __extends function.
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-// Create and register a custom control.
+﻿// Create and register a custom control.
 function customizeToolbox(s, e, shortTypeName, fullTypeName) {
     // Get info objects which are common for most controls.
     // Info objects which are unnecessary for the current implementation are commented out.
@@ -65,7 +51,8 @@ function customizeToolbox(s, e, shortTypeName, fullTypeName) {
     var defaultExpression = controlsFactory.getPropertyInfo(shortTypeName, "Expression")
     defaultExpression.expressionName = "Number"
     // Specify the event in which the property should be available.
-    controlsFactory.setExpressionBinding(shortTypeName, "Number", controlsFactory._beforePrintPrintOnPage);
+    controlsFactory.setExpressionBinding(shortTypeName, "Number",
+        controlsFactory._beforePrintPrintOnPage);
     // Add the "Number" property to the Property panel's "Data Bindings" section.
     var dataBindings = controlsFactory.getPropertyInfo(shortTypeName, "Data Bindings");
     dataBindings.allDataBindings.push("Number");
