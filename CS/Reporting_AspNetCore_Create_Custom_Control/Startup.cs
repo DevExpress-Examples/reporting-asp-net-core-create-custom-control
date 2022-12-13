@@ -26,9 +26,8 @@ namespace Reporting_AspNetCore_Create_Custom_Control {
             services.AddDevExpressControls();
             services.AddScoped<ReportStorageWebExtension, CustomReportStorageWebExtension>();
             services
-                .AddMvc()
-                .AddNewtonsoftJson()
-                .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
+                .AddControllersWithViews()
+                .AddNewtonsoftJson();
             services.ConfigureReportingServices(configurator => {
                 configurator.ConfigureReportDesigner(designerConfigurator => {
                     designerConfigurator.RegisterDataSourceWizardConfigFileConnectionStringsProvider();
