@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reporting_AspNetCore_Create_Custom_Control", "Reporting_AspNetCore_Create_Custom_Control\Reporting_AspNetCore_Create_Custom_Control.csproj", "{FF8C7B95-2C3F-48BB-BED9-784A31E66359}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reporting_AspNetCore_Create_Custom_Control", "CustomControlExample\CustomControlExample.csproj", "{FF8C7B95-2C3F-48BB-BED9-784A31E66359}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
