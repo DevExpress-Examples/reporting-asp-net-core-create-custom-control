@@ -1,3 +1,5 @@
+@model DevExpress.XtraReports.Web.ReportDesigner.ReportDesignerModel
+
 <script type="text/html" id="dxrd-svg-toolbox-numericlabel">
         <svg viewBox="-2 -4 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <g id="Layer_1" transform="translate(-2, -4)" style="enable-background:new 0 0 32 32">
@@ -16,8 +18,7 @@
 @{
     var designerRender = Html.DevExpress().ReportDesigner("reportDesigner")
         .Height("1000px")
-        .CustomControls(new [] { typeof(MyControl), typeof(NumericLabel)})
-        .Bind("TestReport");
+        .Bind(Model);
     @designerRender.RenderHtml();
 }
 
