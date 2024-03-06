@@ -25,6 +25,3 @@ This example demonstrates how to create a custom report control and add it to th
 - [How to Create a Custom DevExpress Report Control](https://github.com/DevExpress-Examples/Reporting-Custom-Controls)
 - [Reporting for Web Forms - Create a Custom Report Control](https://github.com/DevExpress-Examples/reporting-web-custom-control-designer-toolbox)
 - [Reporting for ASP.NET MVC - Create a Custom Report Control](https://github.com/DevExpress-Examples/Reporting-AspNetMvc-Create-Custom-Control)
-
-
-
